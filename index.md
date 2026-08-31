@@ -14,7 +14,7 @@ hero: true
     </div>
     <aside class="affiliation-card">
       {% if site.logo %}<img src="{{ site.logo | relative_url }}" alt="Marshall Micro Lab logo">{% else %}<div class="hero-logo-placeholder" aria-label="Marshall Micro Lab logo placeholder"><span>MML</span><small>Logo</small></div>{% endif %}
-      <p>Department of Molecular Genetics &amp; Microbiology</p><p>Emerging Pathogens Institute</p><p><strong>University of Florida</strong></p>
+      <p><a href="{{ site.mgm_url }}">Department of Molecular Genetics &amp; Microbiology <span aria-hidden="true">↗</span></a></p><p><a href="{{ site.epi_url }}">Emerging Pathogens Institute <span aria-hidden="true">↗</span></a></p><p><strong><a href="{{ site.uf_url }}">University of Florida <span aria-hidden="true">↗</span></a></strong></p>
     </aside>
   </div>
 </section>

@@ -175,7 +175,7 @@ Images are optional. Designed fallbacks appear when a path is blank. After addin
 
 ## Site-wide settings
 
-Edit `_config.yml` for the title, tagline, description, canonical URL, branding, organization links, collection URLs, and page defaults. Restart Jekyll after changing it. Main page introductions are in each section's `index.md`; homepage text is in the root `index.md`.
+Edit `_config.yml` for the title, tagline, description, canonical URL, branding, UF affiliation URLs, organization links, collection URLs, and page defaults. Restart Jekyll after changing it. Main page introductions are in each section's `index.md`; homepage text is in the root `index.md`.
 
 ## Placeholder content
 

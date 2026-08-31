@@ -14,6 +14,7 @@ favicon: /assets/images/favicon.svg
 
 github_organization: https://github.com/MarshallMicroLab
 uf_url: https://www.ufl.edu/
+mgm_url: https://mgm.ufl.edu/
 epi_url: https://epi.ufl.edu/
 
 markdown: kramdown

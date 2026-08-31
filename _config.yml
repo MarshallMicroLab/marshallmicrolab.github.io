@@ -7,8 +7,8 @@ baseurl: ""
 lang: en-US
 timezone: America/New_York
 
-# Optional branding. Uncomment after adding these files.
-# logo: /assets/images/mml-logo.png
+# Optional branding.
+logo: /assets/images/MarshallMicroLab_logo.jpg
 # social_image: /assets/images/social-preview.png
 favicon: /assets/images/favicon.svg
 

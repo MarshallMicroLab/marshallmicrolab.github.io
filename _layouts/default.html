@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0021a5">
+    <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/svg+xml">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo %}
+    {% if page.image or site.social_image %}
+      {% assign preview_image = page.image | default: site.social_image %}
+      <meta property="og:image" content="{{ preview_image | absolute_url }}">
+    {% endif %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    {% include header.html %}
+    <main id="main-content">{{ content }}</main>
+    {% include footer.html %}
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </body>
+</html>

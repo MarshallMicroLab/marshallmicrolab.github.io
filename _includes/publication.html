@@ -1,0 +1,7 @@
+{% assign publication = include.publication %}
+<article class="publication{% if include.compact %} publication-compact{% endif %}">
+  <h3><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h3>
+  <p class="publication-authors">{{ publication.authors }}</p>
+  <p class="publication-source"><em>{{ publication.journal }}</em>{% if publication.year %} ({{ publication.year }}){% endif %}</p>
+  {% include publication-links.html publication=publication %}
+</article>

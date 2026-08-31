@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="container detail-page">
+  <a class="back-link" href="{{ '/people/' | relative_url }}">← All people</a>
+  <div class="person-profile">
+    {% include image-or-fallback.html image=page.photo alt=page.name kind="person" initials=page.name %}
+    <div>
+      <p class="eyebrow">{{ page.role }}</p>
+      <h1>{{ page.name }}</h1>
+      {% include person-links.html person=page %}
+    </div>
+  </div>
+  <div class="prose measure">{{ content }}</div>
+</article>

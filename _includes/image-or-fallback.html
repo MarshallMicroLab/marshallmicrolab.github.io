@@ -1,0 +1,5 @@
+{% if include.image %}
+  <div class="card-image {{ include.kind }}-image"><img src="{{ include.image | relative_url }}" alt="{{ include.alt | default: '' }}" loading="lazy"></div>
+{% else %}
+  <div class="card-image image-fallback {{ include.kind }}-image" aria-hidden="true"><span>{% if include.kind == 'person' %}{% assign words = include.initials | split: ' ' %}{% for word in words limit: 2 %}{{ word | slice: 0 }}{% endfor %}{% elsif include.kind == 'software' %}&lt;/&gt;{% else %}MML{% endif %}</span></div>
+{% endif %}

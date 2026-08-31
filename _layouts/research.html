@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<article>
+  <header class="detail-hero">
+    <div class="container detail-grid">
+      <div>
+        <a class="back-link back-link-light" href="{{ '/research/' | relative_url }}">← All research</a>
+        <p class="eyebrow">Research · {{ page.status | default: 'active' | capitalize }}</p>
+        <h1>{{ page.title }}</h1>
+        {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+      </div>
+      {% include image-or-fallback.html image=page.image alt=page.image_alt kind="research" initials=page.short_title %}
+    </div>
+  </header>
+  <div class="container page-content detail-content">
+    <div class="prose">{{ content }}</div>
+    {% if page.related_publications or page.related_software or page.funding %}
+    <aside class="related-panel" aria-label="Related information">
+      {% if page.related_publications %}
+        <h2>Related publications</h2>
+        {% for publication_slug in page.related_publications %}
+          {% assign publication = site.publications | where_exp: 'item', 'item.slug == publication_slug' | first %}
+          {% if publication %}{% include publication.html publication=publication compact=true %}{% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if page.related_software %}
+        <h2>Related software</h2>
+        <ul>{% for software_slug in page.related_software %}{% assign tool = site.software | where_exp: 'item', 'item.slug == software_slug' | first %}{% if tool %}<li><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></li>{% endif %}{% endfor %}</ul>
+      {% endif %}
+      {% if page.funding %}<h2>Funding</h2><p>{{ page.funding }}</p>{% endif %}
+    </aside>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,11 @@
+{% assign person = include.person %}
+{% if person.email or person.github or person.orcid or person.google_scholar or person.linkedin or person.website %}
+<ul class="inline-links person-links">
+  {% if person.email %}<li><a href="mailto:{{ person.email }}">Email</a></li>{% endif %}
+  {% if person.github %}<li><a href="https://github.com/{{ person.github }}">GitHub</a></li>{% endif %}
+  {% if person.orcid %}<li><a href="https://orcid.org/{{ person.orcid }}">ORCID</a></li>{% endif %}
+  {% if person.google_scholar %}<li><a href="{{ person.google_scholar }}">Google Scholar</a></li>{% endif %}
+  {% if person.linkedin %}<li><a href="{{ person.linkedin }}">LinkedIn</a></li>{% endif %}
+  {% if person.website %}<li><a href="{{ person.website }}">Website</a></li>{% endif %}
+</ul>
+{% endif %}

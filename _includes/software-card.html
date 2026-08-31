@@ -1,0 +1,5 @@
+{% assign software = include.software %}
+<article class="software-card">
+  <div class="software-card-top">{% include image-or-fallback.html image=software.logo alt=software.title kind="software" initials=software.title %}<div><p class="card-kicker">{{ software.language | default: 'Research software' }}</p><h3><a href="{{ software.url | relative_url }}">{{ software.title }}</a></h3></div></div>
+  <p>{{ software.description }}</p>{% include software-links.html software=software %}
+</article>

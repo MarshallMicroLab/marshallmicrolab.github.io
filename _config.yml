@@ -1,0 +1,79 @@
+title: Marshall Micro Lab
+short_title: MML
+tagline: Microbial genomics, bioinformatics, and epidemiology
+description: Computational and genomic approaches to microbial populations, diversity, transmission, and epidemiology.
+url: https://marshallmicrolab.github.io
+baseurl: ""
+lang: en-US
+timezone: America/New_York
+
+# Optional branding. Uncomment after adding these files.
+# logo: /assets/images/mml-logo.png
+# social_image: /assets/images/social-preview.png
+favicon: /assets/images/favicon.svg
+
+github_organization: https://github.com/MarshallMicroLab
+uf_url: https://www.ufl.edu/
+epi_url: https://epi.ufl.edu/
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  people:
+    output: true
+    permalink: /people/:name/
+  research:
+    output: true
+    permalink: /research/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
+  software:
+    output: true
+    permalink: /software/:name/
+  news:
+    output: true
+    permalink: /news/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: people
+    values:
+      layout: person
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+  - scope:
+      path: ""
+      type: software
+    values:
+      layout: software
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

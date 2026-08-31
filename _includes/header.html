@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Marshall Micro Lab home">
+      {% if site.logo %}<img src="{{ site.logo | relative_url }}" alt="" width="42" height="42">{% else %}<span class="brand-mark" aria-hidden="true">MML</span>{% endif %}
+      <span><strong>Marshall Micro Lab</strong><small>University of Florida</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span></button>
+    <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+      <ul>
+        {% assign navigation = 'Research|/research/,People|/people/,Publications|/publications/,Software|/software/,News|/news/,Contact|/contact/' | split: ',' %}
+        {% for item in navigation %}{% assign parts = item | split: '|' %}<li><a href="{{ parts[1] | relative_url }}"{% if page.url contains parts[1] %} aria-current="page"{% endif %}>{{ parts[0] }}</a></li>{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

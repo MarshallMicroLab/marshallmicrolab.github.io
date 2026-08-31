@@ -1,0 +1,5 @@
+{% assign person = include.person %}
+<article class="person-card">
+  <a class="image-link" href="{{ person.url | relative_url }}" tabindex="-1">{% include image-or-fallback.html image=person.photo alt=person.name kind="person" initials=person.name %}</a>
+  <div class="card-body"><p class="card-kicker">{{ person.role }}</p><h3><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>{% if person.description %}<p>{{ person.description }}</p>{% else %}<p>{{ person.content | markdownify | strip_html | truncatewords: 24 }}</p>{% endif %}{% include person-links.html person=person %}</div>
+</article>
